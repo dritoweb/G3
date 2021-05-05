@@ -1,5 +1,16 @@
 <?php
   session_start();
+  include("codigo/funcionadmin.php");
+
+  if (isset($_GET['iniciar'])) 
+  {
+    iniciar();
+  }
+
+  if (isset($_GET['cerrar'])) 
+  {
+    cerrarSesion();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,28 +69,36 @@
             if(!isset($_SESSION['usuario']) and !isset($_SESSION['admin']))
             {
           ?>
+              <li><a class="nav-link scrollto active" href="index.php">No ha Iniciado</a></li>
               <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
               <li><a class="nav-link scrollto" href="#alta">Alta</a></li>
-              <li><a class="nav-link scrollto" href="#services">Iniciar Sesion</a></li>
+              <li><a class="nav-link scrollto" href="#iniciar">Iniciar Sesion</a></li>
           <?php
             }
             elseif(isset($_SESSION['usuario']))
             {
           ?>
+              <li><a class="nav-link scrollto active" href="index.php">Bienvenido, <?php echo $_SESSION['usuario'] ?></a></li>
               <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
               <li><a class="nav-link scrollto" href="#reservar">Reservar</a></li>
               <li><a class="nav-link scrollto" href="#misFiestas">Mis fiestas</a></li>
-              <li><a class="nav-link scrollto " href="#cerrar">Cerrar Sesion</a></li>
+              <li><a class="nav-link scrollto " href="index.php?cerrar">Cerrar Sesion</a></li>
           <?php
             }
             elseif(isset($_SESSION['admin']))
             {
           ?>
+              <li><a class="nav-link scrollto active" href="index.php">Bienvenido, <?php echo $_SESSION['admin'] ?></a></li>
               <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-              <li><a class="nav-link scrollto" href="#crear">Crear BD</a></li>
-              <li><a class="nav-link scrollto" href="#borrar">Borrar BD</a></li>
-              <li><a class="nav-link scrollto " href="#altaEmp">Alta Empleado</a></li>
-              <li><a class="nav-link scrollto" href="#bajaEmp">Baja Empleado</a></li>
+              <li><a class="nav-link scrollto" href="index.php?crear">Crear BD</a></li>
+              <li><a class="nav-link scrollto" href="index.php?borrar">Borrar BD</a></li>
+              <li class="dropdown"><a href="#"><span>Animadores</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                <li><a class="nav-link scrollto " href="#altaEmp">Alta</a></li>
+                <li><a class="nav-link scrollto" href="#bajaEmp">Baja</a></li>
+                <li><a class="nav-link scrollto" href="#modEmp">Modificar</a></li>
+                </ul>
+              </li>  
               <li class="dropdown"><a href="#"><span>Consultas</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                   <li><a href="#animador">Animadores</a></li>
@@ -87,7 +106,7 @@
                   <li><a href="#fiestasClie">Fiestas segun cliente</a></li>
                 </ul>
               </li>         
-              <li><a class="nav-link scrollto " href="#cerrar">Cerrar Sesion</a></li>
+              <li><a class="nav-link scrollto " href="index.php?cerrar">Cerrar Sesion</a></li>
           <?php
             }
           ?>
@@ -165,15 +184,57 @@
 
     <!-- ======= About Section ======= -->
     <section id="alta" class="about">
-      <div class="container">
-
+    <div class="container">
+      <h2>Dar de Alta: </h2>
+      <form class="row g-3" action="index.php?altaCliente" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Nombre Usuario</label>
+            <input type="text" name="nombre" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Direccion</label>
+            <input type="text" name="direccion" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Email</label>
+            <input type="text" name="email" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Contraseña</label>
+            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+        <div class="col-12 text-center">
+          <?php
+              if (isset($_GET['altaCliente'])) 
+              {
+                altaCliente();
+              }
+          ?>
+        </div>
       </div>
     </section><!-- End About Section -->
 
     <!-- ======= Features Section ======= -->
     <section id="iniciar" class="features">
       <div class="container">
-
+      <h2>Iniciar Sesion: </h2>
+      <form class="row g-3" action="index.php?iniciar" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Usuario</label>
+            <input type="text" name="usuario" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Contraseña</label>
+            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
       </div>
     </section><!-- End Features Section -->
   <?php
@@ -182,49 +243,136 @@
     {
   ?>
     <!-- ======= Cta Section ======= -->
-    <section id="crear" class="cta">
+    <section id="#" class="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <?php
+              if (isset($_GET['crear'])) 
+              {
+                CBD();
+              }
+              if (isset($_GET['borrar'])) 
+              {
+                BBD();
+              }
+              if (isset($_GET['altaAnimador'])) 
+              {
+                altaAnimador();
+              }
+              if (isset($_GET['bajaAnimador'])) 
+              {
+                bajaAnimador();
+              }
+              if (isset($_GET['modAnimador'])) 
+              {
+                modAnimador();
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="altaEmp" class="features">
+      <div class="container">
+      <h2>Alta de Animadores: </h2>
+      <form class="row g-3" action="index.php?altaAnimador" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Id del Animador</label>
+            <input type="text" name="id" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Nombre del Animador</label>
+            <input type="text" name="nombre" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Especialidad del Animador</label>
+            <input type="text" name="especialidad" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Precio que cobrara el Animador</label>
+            <input type="text" name="precio" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Contraseña</label>
+            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form> 
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="bajaEmp" class="features">
+      <div class="container">
+      <h2>Baja de Animadores: </h2>
+      <form class="row g-3" action="index.php?bajaAnimador" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Id del Animador</label>
+            <input type="text" name="id" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>        
+      </div>
+    </section><!-- End Cta Section -->
+
+    <section id="modEmp" class="features">
+      <div class="container">
+      <h2>Modificacion de Animadores: </h2>
+      <form class="row g-3" action="index.php?modAnimador" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">id del Animador que quieres modificar</label>
+            <input type="text" name="id" class="form-control is-valid" id="validationServer01" required>
+        </div>
+      <h4>Lo de abajo es lo modificable</h4>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Nombre del Animador</label>
+            <input type="text" name="nombre" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Especialidad del Animador</label>
+            <input type="text" name="especialidad" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Precio que cobrara el Animador</label>
+            <input type="text" name="precio" class="form-control is-valid" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Contraseña</label>
+            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form> 
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="animador" class="features">
+      <div class="container">
+          <?php
+            echo "<h4>Tabla de todos los animadores</h4>";
+            TodosAnimadores();
+          ?>
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="allFiestas" class="features">
       <div class="container">
 
       </div>
     </section><!-- End Cta Section -->
 
     <!-- ======= Cta Section ======= -->
-    <section id="borrar" class="cta">
-      <div class="container">
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="altaEmp" class="cta">
-      <div class="container">
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="bajaEmp" class="cta">
-      <div class="container">
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="animador" class="cta">
-      <div class="container">
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="allFiestas" class="cta">
-      <div class="container">
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <section id="fiestasClie" class="cta">
+    <section id="fiestasClie" class="features">
       <div class="container">
 
       </div>
@@ -237,14 +385,14 @@
   ?>
 
    <!-- ======= Cta Section ======= -->
-   <section id="reservar" class="cta">
+   <section id="reservar" class="features">
       <div class="container">
 
       </div>
     </section><!-- End Cta Section -->
 
      <!-- ======= Cta Section ======= -->
-     <section id="misFiestas" class="cta">
+     <section id="misFiestas" class="features">
       <div class="container">
 
       </div>
