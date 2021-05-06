@@ -1,6 +1,7 @@
 <?php
   session_start();
   include("codigo/funcionadmin.php");
+  include("codigo/funcionesusu.php");
 
   if (isset($_GET['iniciar'])) 
   {
@@ -268,6 +269,10 @@
               {
                 modAnimador();
               }
+              if (isset($_GET['reservar'])) 
+              {
+                reserva();
+              }
             ?>
           </div>
         </div>
@@ -386,11 +391,38 @@
 
    <!-- ======= Cta Section ======= -->
    <section id="reservar" class="features">
-      <div class="container">
-
+   <div class="container">
+      <h2>Solicitar Fiesta:</h2>
+      <form class="row g-3" action="index.php?reservar" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Fecha (yyyy/mm/dd)</label>
+            <input type="text" name="fecha" class="form-control" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+           select tabla animadores
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Duracion (horas)</label>
+            <input type="text" name="especialidad" class="form-control" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Tipo de fiesta</label>
+            <input type="text" name="tipo" class="form-control" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Nº de asistentes</label>
+            <input type="text" name="asistentes" class="form-control" id="validationServer01" >
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Media de edad</label>
+            <input type="text" name="mediaedad" class="form-control" id="validationServer01" >
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form> 
       </div>
     </section><!-- End Cta Section -->
-
      <!-- ======= Cta Section ======= -->
      <section id="misFiestas" class="features">
       <div class="container">
