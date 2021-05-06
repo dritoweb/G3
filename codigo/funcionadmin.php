@@ -15,35 +15,18 @@ function iniciar()
 
         mysqli_select_db($c, "PIÑATA_FELIZ");
 
-        $resultado= mysqli_query($c, "SELECT NOMBRECLIENTE FROM Clientes WHERE (NOMBRECLIENTE='$nombre' AND CONTRASEÑA='$contrasenia')");
+        $resultado= mysqli_query($c, "SELECT IDCLIENTE, NOMBRECLIENTE FROM Clientes WHERE (NOMBRECLIENTE='$nombre' AND CONTRASEÑA='$contrasenia')");
 
         $numero=mysqli_num_rows($resultado);
         
-        $resultado2= mysqli_query($c, "SELECT NOMBREANIMADOR FROM Animadores WHERE (NOMBREANIMADOR='$nombre' AND CONTRASEÑA='$contrasenia')");
-
-        $numero2=mysqli_num_rows($resultado);
 
         if ($numero == 1) 
         {
             while ($registro = mysqli_fetch_row($resultado))
             {
-    
-                foreach($registro  as $clave)
-                {
-                    $_SESSION['usuario'] = $clave;
-                }
-            }
-            header("Location:index.php");
-        }
-        elseif ($numero2 == 1) 
-        {
-            while ($registro = mysqli_fetch_row($resultado2))
-            {
-    
-                foreach($registro  as $clave)
-                {
-                    $_SESSION['usuario'] = $clave;
-                }
+                $_SESSION['id'] = $registro[0];
+                $_SESSION['usuario'] = $registro[1];
+
             }
             header("Location:index.php");
         }
