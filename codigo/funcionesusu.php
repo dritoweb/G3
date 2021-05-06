@@ -34,5 +34,13 @@ function misfiestas(){
     }
 }
 function reservar(){
+    $fecha=$_POST['fecha'];
+    $animador=$_POST['animador'];
+    $duracion=$_POST['duracion'];
+    $tipo=$_POST['tipo'];
+    $numero=$_POST['asistentes'];
+    $media=$_POST['mediaedad'];
+    $importe="";
+    $id=$_SESSION['id'];
 }
 ?>
