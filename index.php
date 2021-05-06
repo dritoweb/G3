@@ -281,23 +281,23 @@
       <form class="row g-3" action="index.php?altaAnimador" method="post">
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Id del Animador</label>
-            <input type="text" name="id" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="id" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Nombre del Animador</label>
-            <input type="text" name="nombre" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="nombre" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Especialidad del Animador</label>
-            <input type="text" name="especialidad" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="especialidad" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Precio que cobrara el Animador</label>
-            <input type="text" name="precio" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="precio" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Contraseña</label>
-            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+            <input type="password" name="contrasenia" class="form-control " id="validationServer01" >
         </div>
         <div class="col-12 pt-3">
             <button class="btn btn-primary" type="submit">Enviar</button>
@@ -313,7 +313,7 @@
       <form class="row g-3" action="index.php?bajaAnimador" method="post">
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Id del Animador</label>
-            <input type="text" name="id" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="id" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-12 pt-3">
             <button class="btn btn-primary" type="submit">Enviar</button>
@@ -328,24 +328,24 @@
       <form class="row g-3" action="index.php?modAnimador" method="post">
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">id del Animador que quieres modificar</label>
-            <input type="text" name="id" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="id" class="form-control" id="validationServer01" required>
         </div>
       <h4>Lo de abajo es lo modificable</h4>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Nombre del Animador</label>
-            <input type="text" name="nombre" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="nombre" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Especialidad del Animador</label>
-            <input type="text" name="especialidad" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="especialidad" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Precio que cobrara el Animador</label>
-            <input type="text" name="precio" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="precio" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Contraseña</label>
-            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+            <input type="password" name="contrasenia" class="form-control" id="validationServer01" >
         </div>
         <div class="col-12 pt-3">
             <button class="btn btn-primary" type="submit">Enviar</button>
@@ -397,11 +397,6 @@
 
       </div>
     </section><!-- End Cta Section -->
-  
-  <?php
-    }
-  ?>
-
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
@@ -513,7 +508,10 @@
         </div>
 
       </div>
-    </section><!-- End Portfolio Section -->
+    </section>
+  <?php
+    }
+  ?>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
