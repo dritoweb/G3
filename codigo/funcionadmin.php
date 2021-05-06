@@ -135,6 +135,7 @@ function CBD()
     $crear .="IDANIMADOR INT ,";
     $crear .="DURACION INT ,";
     $crear .="NUMERO INT ,";
+    $crear .="TIPOFIESTA VARCHAR(50) ,";
     $crear .="EDADMEDIA INT ,";
     $crear .="IMPORTE INT ,";
     $crear .="IDCLIENTE INT ,"; 
