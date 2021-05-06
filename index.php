@@ -189,19 +189,19 @@
       <form class="row g-3" action="index.php?altaCliente" method="post">
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Nombre Usuario</label>
-            <input type="text" name="nombre" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="nombre" class="form-control " id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Direccion</label>
-            <input type="text" name="direccion" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="direccion" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Email</label>
-            <input type="text" name="email" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="email" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Contraseña</label>
-            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+            <input type="password" name="contrasenia" class="form-control" id="validationServer01" >
         </div>
         <div class="col-12 pt-3">
             <button class="btn btn-primary" type="submit">Enviar</button>
@@ -225,11 +225,11 @@
       <form class="row g-3" action="index.php?iniciar" method="post">
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Usuario</label>
-            <input type="text" name="usuario" class="form-control is-valid" id="validationServer01" required>
+            <input type="text" name="usuario" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Contraseña</label>
-            <input type="password" name="contrasenia" class="form-control is-valid" id="validationServer01" >
+            <input type="password" name="contrasenia" class="form-control" id="validationServer01" >
         </div>
         <div class="col-12 pt-3">
             <button class="btn btn-primary" type="submit">Enviar</button>
