@@ -81,12 +81,12 @@ function CBD()
     $crear ="CREATE TABLE IF NOT EXISTS ";
     $crear .="Animadores";
     $crear .= "("; 
-    $crear .="IDANIMADOR INT UNIQUE,"; 
+    $crear .="IDANIMADOR INT ,"; 
     $crear .="NOMBREANIMADOR VARCHAR(50) ,";
     $crear .="ESPECIALIDAD VARCHAR(50) ,";
     $crear .="CONTRASEÑA VARCHAR(50) ,";  
     $crear .="PRECIO INT,"; 
-    $crear .="PRIMARY KEY(ESPECIALIDAD)";    
+    $crear .="PRIMARY KEY(IDANIMADOR)";    
     $crear .=")";  
     
     if(mysqli_query($c,$crear))
@@ -128,38 +128,19 @@ function CBD()
     }
 
     $crear ="CREATE TABLE IF NOT EXISTS ";
-    $crear .="Las_Fiestas";
-    $crear .= "("; 
-    $crear .="TIPOFIESTA INT AUTO_INCREMENT,"; 
-    $crear .="NOMBREFIESTA VARCHAR(50) ,";
-    $crear .="PRIMARY KEY(TIPOFIESTA)";    
-    $crear .=")";   
-
-    if(mysqli_query($c,$crear))
-    {
-        echo "<h4>Se ha creado la tabla Las Fiestas</h4>";
-    }
-    else
-    {
-        echo "La tabla Las Fiestas ya esta creada<br>";
-    }
-
-    $crear ="CREATE TABLE IF NOT EXISTS ";
     $crear .="Fiestas";
     $crear .= "("; 
-    $crear .="IDFIESTA INT UNIQUE,"; 
+    $crear .="IDFIESTA INT AUTO_INCREMENT,"; 
     $crear .="FECHA DATE ,";
-    $crear .="ESPECIALIDAD VARCHAR(50) ,";
+    $crear .="IDANIMADOR INT ,";
     $crear .="DURACION INT ,";
-    $crear .="TIPOFIESTA INT ,";
     $crear .="NUMERO INT ,";
     $crear .="EDADMEDIA INT ,";
     $crear .="IMPORTE INT ,";
     $crear .="IDCLIENTE INT ,"; 
-    $crear .="PRIMARY KEY(FECHA,ESPECIALIDAD) ,";  
-    $crear .="FOREIGN KEY (ESPECIALIDAD) REFERENCES Animadores(ESPECIALIDAD) ON DELETE CASCADE ON UPDATE CASCADE ,";
-    $crear .="FOREIGN KEY (IDCLIENTE) REFERENCES Clientes(IDCLIENTE) ON DELETE CASCADE ON UPDATE CASCADE , "; 
-    $crear .="FOREIGN KEY (TIPOFIESTA) REFERENCES Las_Fiestas(TIPOFIESTA) ON DELETE CASCADE ON UPDATE CASCADE ";      
+    $crear .="PRIMARY KEY(IDFIESTA) ,";  
+    $crear .="FOREIGN KEY (IDANIMADOR) REFERENCES Animadores(IDANIMADOR) ON DELETE CASCADE ON UPDATE CASCADE ,";
+    $crear .="FOREIGN KEY (IDCLIENTE) REFERENCES Clientes(IDCLIENTE) ON DELETE CASCADE ON UPDATE CASCADE  ";      
     $crear .=")";  
             
     if(mysqli_query($c,$crear))
