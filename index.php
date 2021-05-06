@@ -183,6 +183,124 @@
   ?>
   <main id="main">
 
+     <!-- ======= Features Section ======= -->
+     <section id="iniciar" class="features">
+      <div class="container">
+      <h2>Iniciar Sesion: </h2>
+      <form class="row g-3" action="index.php?iniciar" method="post">
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Usuario</label>
+            <input type="text" name="usuario" class="form-control" id="validationServer01" required>
+        </div>
+        <div class="col-md-12">
+            <label for="validationServer01" class="form-label">Contraseña</label>
+            <input type="password" name="contrasenia" class="form-control" id="validationServer01" >
+        </div>
+        <div class="col-12 pt-3">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+      </form>
+      </div>
+    </section><!-- End Features Section -->
+
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Nuestras fiestas</h2>
+          <p>Tenemos gran variedad</p>
+        </div>
+
+        
+
+        <div class="row portfolio-container" data-aos="fade-up">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="assets/img/portfolio/boda.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Boda</h4>
+              <p>Organizacion de fiestas de boda</p>
+              <a href="assets/img/portfolio/boda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Organizamos fiestas de boda sin compromiso, usted elije el sitio que mas le guste de nuestro catalogo"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="assets/img/portfolio/fiesta.jpeg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Discoteca</h4>
+              <p>Fiestas en discotecas locales</p>
+              <a href="assets/img/portfolio/fiesta.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="La discoteca es un lugar mas solicitado por la audiencia joven, amplio lugar de baile"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="assets/img/portfolio/cumpleaños.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Fiestas tematicas</h4>
+              <p>Organizacion de fiestas tematicas</p>
+              <a href="assets/img/portfolio/cumpleaños.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Organizamos todo tipo de fiestas tematicas, como cumpleaños, fiestas de disfraces etc. Usted elije la tematica"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="assets/img/portfolio/viajes.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Viajes</h4>
+              <p>Viajes al lugar soñado</p>
+              <a href="assets/img/portfolio/viajes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Le organizamos el viaje que siempre soñó con quien usted elija, pregunte sin compromiso"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="assets/img/portfolio/sorpresa.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Fiesta sorpresa</h4>
+              <p>Le organizamos una fiesta sorpresa</p>
+              <a href="assets/img/portfolio/sorpresa.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Organizamos una fiesta sorpresa para quien mas desee con todo tipo de detalles"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="assets/img/portfolio/halloween.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Fiesta de halloween</h4>
+              <p>Organizamos fiestas de halloween</p>
+              <a href="assets/img/portfolio/halloween.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Organizamos una fiesta de halloween a su gusto con todo tipo de detalles, contactenos para mas informacion"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="assets/img/portfolio/bautizo.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Bautizos</h4>
+              <p>Organizacion de bautizos</p>
+              <a href="assets/img/portfolio/bautizo.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Organizamos bautizos para recordar, con sesion fotografica a disposicion"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="assets/img/portfolio/comunion.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>fiesta de comunion</h4>
+              <p>organizamos comuniones</p>
+              <a href="assets/img/portfolio/comunion.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Organizamos fiestas de comunion, tendrá todo a su disposion"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="assets/img/portfolio/otros.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Otros tipos de viajes</h4>
+              <p>Disponemos de otros tipos de viajes no especificados</p>
+              <a href="assets/img/portfolio/otros.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Indiquenos cualquier tipo de viajes que desee"><i class="bx bx-plus"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    
     <!-- ======= About Section ======= -->
     <section id="alta" class="about">
     <div class="container">
@@ -219,132 +337,6 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="iniciar" class="features">
-      <div class="container">
-      <h2>Iniciar Sesion: </h2>
-      <form class="row g-3" action="index.php?iniciar" method="post">
-        <div class="col-md-12">
-            <label for="validationServer01" class="form-label">Usuario</label>
-            <input type="text" name="usuario" class="form-control" id="validationServer01" required>
-        </div>
-        <div class="col-md-12">
-            <label for="validationServer01" class="form-label">Contraseña</label>
-            <input type="password" name="contrasenia" class="form-control" id="validationServer01" >
-        </div>
-        <div class="col-12 pt-3">
-            <button class="btn btn-primary" type="submit">Enviar</button>
-        </div>
-      </form>
-      </div>
-    </section><!-- End Features Section -->
-
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="zoom-out">
-          <h2>Nuestras fiestas</h2>
-          <p>Tenemos gran variedad</p>
-        </div>
-
-        
-
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/boda.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Boda</h4>
-              <p>Organizacion de fiestas de boda</p>
-              <a href="assets/img/portfolio/boda.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Organizamos fiestas de boda sin compromiso, usted elije el sitio que mas le guste de nuestro catalogo"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/fiesta.jpeg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Discoteca</h4>
-              <p>Fiestas en discotecas locales</p>
-              <a href="assets/img/portfolio/fiesta.jpeg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="La discoteca es un lugar mas solicitado por la audiencia joven, amplio lugar de baile"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/cumpleaños.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Fiestas tematicas</h4>
-              <p>Organizacion de fiestas tematicas</p>
-              <a href="assets/img/portfolio/cumpleaños.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Organizamos todo tipo de fiestas tematicas, como cumpleaños, fiestas de disfraces etc. Usted elije la tematica"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/viajes.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Viajes</h4>
-              <p>Viajes al lugar soñado</p>
-              <a href="assets/img/portfolio/viajes.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Le organizamos el viaje que siempre soñó con quien usted elija, pregunte sin compromiso"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/sorpresa.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Fiesta sorpresa</h4>
-              <p>Le organizamos una fiesta sorpresa</p>
-              <a href="assets/img/portfolio/sorpresa.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Organizamos una fiesta sorpresa para quien mas desee con todo tipo de detalles"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/halloween.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Fiesta de halloween</h4>
-              <p>Organizamos fiestas de halloween</p>
-              <a href="assets/img/portfolio/halloween.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Organizamos una fiesta de halloween a su gusto con todo tipo de detalles, contactenos para mas informacion"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/bautizo.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Bautizos</h4>
-              <p>Organizacion de bautizos</p>
-              <a href="assets/img/portfolio/bautizo.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Organizamos bautizos para recordar, con sesion fotografica a disposicion"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/comunion.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>fiesta de comunion</h4>
-              <p>organizamos comuniones</p>
-              <a href="assets/img/portfolio/comunion.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Organizamos fiestas de comunion, tendrá todo a su disposion"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/otros.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Otros tipos de viajes</h4>
-              <p>Disponemos de otros tipos de viajes no especificados</p>
-              <a href="assets/img/portfolio/otros.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Indiquenos cualquier tipo de viajes que desee"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
   <?php
     }
     elseif (isset($_SESSION['admin'])) 
