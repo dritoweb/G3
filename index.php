@@ -1,7 +1,7 @@
 <!--PREGUNTAR A MANOLLI COMO SUBIR LA TABLA Y COMO HACER LO DE LOS BOTONES DE CANCELAR FIESTA-->
 <?php
   session_start();
-  include("codigo/funcionadmin.php");
+  include("codigo/funciones.php");
 
   if (isset($_GET['iniciar'])) 
   {
