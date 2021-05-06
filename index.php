@@ -1,7 +1,7 @@
+<!--PREGUNTAR A MANOLLI COMO SUBIR LA TABLA Y COMO HACER LO DE LOS BOTONES DE CANCELAR FIESTA-->
 <?php
   session_start();
   include("codigo/funcionadmin.php");
-  include("codigo/funcionesusu.php");
 
   if (isset($_GET['iniciar'])) 
   {
@@ -271,7 +271,7 @@
               }
               if (isset($_GET['reservar'])) 
               {
-                reserva();
+                reservar();
               }
             ?>
           </div>
@@ -390,6 +390,24 @@
   ?>
 
    <!-- ======= Cta Section ======= -->
+   <section id="#" class="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <?php
+              if (isset($_GET['reservar'])) 
+              {
+                reservar();
+              }
+              if (isset($_GET['eliminarregistro'])) 
+              {
+                eliminarregistro();
+              }
+            ?>
+          </div>
+        </div>
+      </div>
+    </section>
    <section id="reservar" class="features">
    <div class="container">
       <h2>Solicitar Fiesta:</h2>
@@ -399,11 +417,29 @@
             <input type="text" name="fecha" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
-           select tabla animadores
+        <label for="validationServer01" class="form-label">Elige un animador/a</label>
+        <select name="animador" class="form-select w-350 mr-1" id="validationTooltip04" required>
+          <option selected disabled value="">Animador</option>
+          <?php 
+          if ($c=mysqli_connect ("localhost","usuapp","","pinata_feliz")){
+            $sentencia="SELECT idanimador, NOMBREanimador FROM animadores";
+            if($resultado=mysqli_query($c,$sentencia)){
+              while ($registro = mysqli_fetch_array($resultado)){
+                  echo '<option value="'.$registro[0].'">'.$registro[1].'</option>';
+              }
+            }else{
+                echo "<h1>No ha sido posible ejecutar la consulta</h1>";
+            }
+          }else{
+              echo "<h2> NO HA SIDO POSIBLE ESTABLECER LA CONEXIÓN</h2>"; 
+          }
+          mysqli_close($c);
+          ?>
+        </select>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Duracion (horas)</label>
-            <input type="text" name="especialidad" class="form-control" id="validationServer01" required>
+            <input type="text" name="duracion" class="form-control" id="validationServer01" required>
         </div>
         <div class="col-md-12">
             <label for="validationServer01" class="form-label">Tipo de fiesta</label>
@@ -422,15 +458,18 @@
         </div>
       </form> 
       </div>
-    </section><!-- End Cta Section -->
-     <!-- ======= Cta Section ======= -->
-     <section id="misFiestas" class="features">
-      <div class="container">
+    </section>
 
+    <section id="misFiestas" class="features">
+      <div class="container">
+          <?php
+            echo "<h4>Tabla de todas las fiestas</h4>";
+            misfiestas();
+          ?>
       </div>
-    </section><!-- End Cta Section -->
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    </section>
+
+    <!--<section id="portfolio" class="portfolio">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
@@ -540,7 +579,7 @@
         </div>
 
       </div>
-    </section>
+    </section>-->
   <?php
     }
   ?>
