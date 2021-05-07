@@ -368,10 +368,6 @@
               {
                 modAnimador();
               }
-              if (isset($_GET['reservar'])) 
-              {
-                reservar();
-              }
             ?>
           </div>
         </div>
@@ -498,7 +494,7 @@
               {
                 reservar();
               }
-              if (isset($_GET['eliminarregistro'])) 
+              if (isset($_GET['cancelar'])) 
               {
                 eliminarregistro();
               }
