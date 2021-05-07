@@ -114,7 +114,7 @@ function CBD()
     $crear .="Fiestas";
     $crear .= "("; 
     $crear .="IDFIESTA INT AUTO_INCREMENT,"; 
-    $crear .="FECHA varchar(35) ,";
+    $crear .="FECHA DATE ,";
     $crear .="IDANIMADOR INT ,";
     $crear .="DURACION INT ,";
     $crear .="NUMERO INT ,";
@@ -343,21 +343,21 @@ function misfiestas(){
     if($c=mysqli_connect("localhost","usuapp","","pinata_feliz")){
         $id=$_SESSION['id'];
         $sentencia="SELECT F.IDFIESTA, F.FECHA, F.IDANIMADOR, F.DURACION, F.TIPOFIESTA, F.EDADMEDIA, 
-                    F.IMPORTE, C.NOMBRECLIENTE
+                    concat(F.IMPORTE,'€'), C.NOMBRECLIENTE
          FROM FIESTAS F JOIN CLIENTES C ON F.IDCLIENTE = C.IDCLIENTE 
          WHERE F.IDCLIENTE LIKE '$id'";
         if($resultado=mysqli_query($c,$sentencia)){
-            ?><table class="table">
+            ?><table class="table table-striped ">
                 <thead>
                     <tr>
-                    <th scope="col">IDFiesta</th>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Animador</th>
-                    <th scope="col">Duracion</th>
-                    <th scope="col">Tipo de fiesta</th>
-                    <th scope="col">Edad Media</th>
-                    <th scope="col">Importe</th>
-                    <th scope="col">Cliente</th>
+                        <th scope="col">IDFiesta</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Animador</th>
+                        <th scope="col">Duracion</th>
+                        <th scope="col">Tipo de fiesta</th>
+                        <th scope="col">Edad Media</th>
+                        <th scope="col">Importe</th>
+                        <th scope="col">Cliente</th>
                     </tr>
                 </thead><?php
             while ($registro = mysqli_fetch_row($resultado)){
@@ -366,7 +366,11 @@ function misfiestas(){
                 foreach($registro  as $clave){
                 echo "<td>",$clave,"</td>";
                 }
-                echo "<td><a name='id' method='post' value='$registro[0]' class='nav-link scrollto active' style='width: 100px; height: 50px; border-radius: 2em;' href='index.php?eliminarregistro'>Cancelar</a></td>";
+                echo "<td>
+                        <form method='post' action='index.php?cancelar'>
+                            <button value='".$registro[0]."' name='id' class='btn btn-outline-danger' type='submit'>Cancelar</button>
+                        </form>
+                     </td>";
                 ?></tr>
                 </tbody><?php
             }
@@ -401,19 +405,16 @@ function reservar(){
     }
 }
 function eliminarregistro(){
-    $id=$_POST['id'];
-    echo "<h1>$id</h1>";    /*if($c=mysqli_connect("localhost","usuapp","","pinata_feliz")){
-        $sentencia="INSERT INTO FIESTAS (FECHA, IDANIMADOR, DURACION, NUMERO, TIPOFIESTA, EDADMEDIA, IMPORTE, IDCLIENTE)
-        SELECT '$fecha', '$animador', '$duracion', '$numero', '$tipo', '$media', precio+200, '$id'
-        FROM ANIMADORES
-        WHERE IDANIMADOR LIKE '$animador'";
+    $id=$_POST['id'];   
+    if($c=mysqli_connect("localhost","usuapp","","pinata_feliz")){
+        $sentencia="DELETE FROM FIESTAS WHERE IDFIESTA LIKE '$id'";
         if($resultado=mysqli_query($c,$sentencia)){
-            echo "<h3>Reserva realizada</h3>";
+            echo "<h4>Cancelacion realizada</h4>";
         }else{
-            echo "<h3>No ha sido posible realizar la reserva</h3>";
+            echo "<h3>No ha sido posible cancelar la reserva</h3>";
         }
     }else{
         echo "Ha sido imposible conectarse";
-    }*/
+    }
 }
 ?>
