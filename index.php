@@ -19,7 +19,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Selecao Bootstrap Template - Index</title>
+  <title>PIÑATA FELIZ</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -134,18 +134,23 @@
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+          <h2 class="animate__animated animate__fadeInDown">Nuesta Varidad de fiestas</h2>
+          <p class="animate__animated animate__fadeInUp">
+          En esta Empresa podra conseguir todo tipo de fiestas, ya sea una tematica, boda, bautizo ect. 
+          Ademas que no hay rectricciones con el numero de personas ya que disponemos de instalacciones de 
+          gran tamaño.
+          </p>
         </div>
       </div>
 
       <!-- Slide 3 -->
       <div class="carousel-item">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+          <h2 class="animate__animated animate__fadeInDown">Mas Detalles</h2>
+          <p class="animate__animated animate__fadeInUp">
+              En cuanto a los precios de las fiestas dependera de los animadores que quiera contratar el cual tiene cada uno su
+              precio correspondiente y el alquiler del establecimiento. Todo a un muy asequible!!!
+          </p>
         </div>
       </div>
 
@@ -289,7 +294,7 @@
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-img"><img src="assets/img/portfolio/otros.jpg" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <h4>Otros tipos de viajes</h4>
+              <h4>Otros tipos de fiestas</h4>
               <p>Disponemos de otros tipos de viajes no especificados</p>
               <a href="assets/img/portfolio/otros.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox details-link" title="Indiquenos cualquier tipo de viajes que desee"><i class="bx bx-plus"></i></a>
             </div>
@@ -690,13 +695,13 @@
       <p>Nuestras redes sociales</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.facebook.com/jesus.luis.528316" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/fabiost42/" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>PiñataFeliz</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>PiñataFeliz</span></strong>. Derechos reservados. Hecho por Fabio, Jesús y Carlos
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
