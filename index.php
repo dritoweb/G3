@@ -1,4 +1,3 @@
-<!--PREGUNTAR A MANOLLI COMO SUBIR LA TABLA Y COMO HACER LO DE LOS BOTONES DE CANCELAR FIESTA-->
 <?php
   session_start();
   include("codigo/funciones.php");
@@ -427,7 +426,7 @@
       <h2>Modificacion de Animadores: </h2>
       <form class="row g-3" action="index.php?modAnimador" method="post">
         <div class="col-md-12">
-            <label for="validationServer01" class="form-label">id del Animador que quieres modificar</label>
+            <label for="validationServer01" class="form-label">Id del Animador que quieres modificar</label>
             <input type="text" name="id" class="form-control" id="validationServer01" required>
         </div>
       <h4>Lo de abajo es lo modificable</h4>
@@ -467,17 +466,35 @@
     <!-- ======= Cta Section ======= -->
     <section id="allFiestas" class="features">
       <div class="container">
-
+          <?php
+            echo "<h4>Tabla de todas las fiestas</h4>";
+            todasfiestas();
+          ?>
       </div>
     </section><!-- End Cta Section -->
 
     <!-- ======= Cta Section ======= -->
+    
     <section id="fiestasClie" class="features">
       <div class="container">
-
+        <h4>Fiestas segun el cliente</h4>
+        <form class="row g-3" action="index.php?cliente" method="post">
+          <div class="col-md-12">
+              <label for="validationServer01" class="form-label">Introduzca el id del cliente a consultar sus fiestas</label>
+              <input type="text" name="id" class="form-control" id="validationServer01" required>
+          </div>
+          <div class="col-12 pt-3 mb-4">
+            <button class="btn btn-primary" type="submit">Enviar</button>
+          </div>
+        </form>
+        <?php
+        if (isset($_GET['cliente'])){
+          echo "<h4>Tabla de fiestas segun cliente</h4>";
+          misfiestas();
+        }
+        ?>
       </div>
     </section><!-- End Cta Section -->
-
   <?php
     }
     elseif (isset($_SESSION['usuario'])) 
@@ -655,7 +672,7 @@
     <section id="misFiestas" class="features">
       <div class="container">
           <?php
-            echo "<h4>Tabla de todas las fiestas</h4>";
+            echo "<h4>Tabla de mis fiestas</h4>";
             misfiestas();
           ?>
       </div>
