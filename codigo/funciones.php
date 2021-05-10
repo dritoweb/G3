@@ -122,7 +122,7 @@ function CBD()
     $crear .="EDADMEDIA INT ,";
     $crear .="IMPORTE INT ,";
     $crear .="IDCLIENTE INT ,"; 
-    $crear .="PRIMARY KEY(IDFIESTA) ,";  
+    $crear .="PRIMARY KEY(IDFIESTA,FECHA) ,";  
     $crear .="FOREIGN KEY (IDANIMADOR) REFERENCES Animadores(IDANIMADOR) ON DELETE CASCADE ON UPDATE CASCADE ,";
     $crear .="FOREIGN KEY (IDCLIENTE) REFERENCES Clientes(IDCLIENTE) ON DELETE CASCADE ON UPDATE CASCADE  ";      
     $crear .=")";  
